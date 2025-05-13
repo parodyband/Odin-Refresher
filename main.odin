@@ -7,6 +7,8 @@ import "modules/hello_world"
 import "modules/read_text_from_file"
 import "modules/bitwise"
 import "modules/lua_example"
+import "modules/dynamic_array"
+import "modules/slice_array"
 
 ProgramEntry :: struct {
     name: string,
@@ -18,6 +20,8 @@ programs: []ProgramEntry = {
     ProgramEntry{"Read Text From File"  , read_text_from_file.Run},
     ProgramEntry{"Bitwise"              , bitwise.Run},
     ProgramEntry{"Lua Example"          , lua_example.Run},
+    ProgramEntry{"Dynamic Arrays"       , dynamic_array.Run},
+    ProgramEntry{"Slice Arrays"         , slice_array.Run}
 }
 
 main :: proc() {
