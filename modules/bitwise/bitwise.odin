@@ -1,4 +1,4 @@
-package Bitwise
+package bitwise
 import "core:fmt"
 
 Run :: proc() {

@@ -1,4 +1,4 @@
-package LuaTest
+package lua_example
 
 import "core:fmt"
 import lua "vendor:lua/5.4"
@@ -34,7 +34,7 @@ Run :: proc() {
 	lua.L_openlibs(state)
 	lua.register(state, "add_numbers", add_numbers)
 
-	lua.L_dofile(state, "Modules/LuaTest/Test.lua")
+	lua.L_dofile(state, "modules/lua_example/example.lua")
 	str := lua.tostring(state, -1)
 	fmt.println(str)
 }

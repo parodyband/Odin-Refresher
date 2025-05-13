@@ -3,10 +3,10 @@ import "core:fmt"
 import "core:os"
 import "core:strconv"
 
-import "Modules/HelloWorld"
-import "Modules/ReadTextFromFile"
-import "Modules/Bitwise"
-import "Modules/LuaTest"
+import "modules/hello_world"
+import "modules/read_text_from_file"
+import "modules/bitwise"
+import "modules/lua_example"
 
 ProgramEntry :: struct {
     name: string,
@@ -14,10 +14,10 @@ ProgramEntry :: struct {
 }
 
 programs: []ProgramEntry = {
-    ProgramEntry{"Hello World", HelloWorld.Run},
-    ProgramEntry{"Read File"  , ReadTextFromFile.Run},
-    ProgramEntry{"Bitwise"    , Bitwise.Run},
-    ProgramEntry{"Lua Test"   , LuaTest.Run},
+    ProgramEntry{"Hello World"          , hello_world.Run},
+    ProgramEntry{"Read Text From File"  , read_text_from_file.Run},
+    ProgramEntry{"Bitwise"              , bitwise.Run},
+    ProgramEntry{"Lua Example"          , lua_example.Run},
 }
 
 main :: proc() {
