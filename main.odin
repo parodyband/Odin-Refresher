@@ -9,6 +9,7 @@ import "modules/bitwise"
 import "modules/lua_example"
 import "modules/dynamic_array"
 import "modules/slice_array"
+import "modules/union_example"
 
 ProgramEntry :: struct {
     name: string,
@@ -16,12 +17,13 @@ ProgramEntry :: struct {
 }
 
 programs: []ProgramEntry = {
-    ProgramEntry{"Hello World"          , hello_world.Run},
-    ProgramEntry{"Read Text From File"  , read_text_from_file.Run},
-    ProgramEntry{"Bitwise"              , bitwise.Run},
-    ProgramEntry{"Lua Example"          , lua_example.Run},
-    ProgramEntry{"Dynamic Arrays"       , dynamic_array.Run},
-    ProgramEntry{"Slice Arrays"         , slice_array.Run}
+    ProgramEntry{"Hello World"          , hello_world.Run         },
+    ProgramEntry{"Read Text From File"  , read_text_from_file.Run },
+    ProgramEntry{"Bitwise"              , bitwise.Run             },
+    ProgramEntry{"Lua Example"          , lua_example.Run         },
+    ProgramEntry{"Dynamic Arrays"       , dynamic_array.Run       },
+    ProgramEntry{"Slice Arrays"         , slice_array.Run         },
+    ProgramEntry{"Union Example"        , union_example.Run       }
 }
 
 main :: proc() {
@@ -34,7 +36,7 @@ main :: proc() {
     fmt.print("Enter number of program to run: ")
 
     buffer: [256]byte
-    n, _ := os.read(os.stdin, buffer[:])
+    n, _  := os.read(os.stdin, buffer[:])
     input := string(buffer[:n-1])
 
     idx, ok := strconv.parse_int(input)
